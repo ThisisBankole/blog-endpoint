@@ -13,9 +13,3 @@ web:
     "/":
       allow: false
       passthru: true
-
-dependencies:
-  python:
-    fastapi:
-    uvicorn: 
-    gunicorn:
