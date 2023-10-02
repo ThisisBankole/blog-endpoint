@@ -1,0 +1,21 @@
+name: app
+type: python:3.11.4
+disk: 512
+
+hooks:
+  build: |
+    pip install -r requirements.txt
+
+web:
+  commands:
+    start: uvicorn main:app --host 127.0.0.1 --port 8000
+  locations:
+    "/":
+      allow: false
+      passthru: true
+
+dependencies:
+  python:
+    fastapi: "^0.103.1"
+    uvicorn: "^0.15.0"
+    gunicorn: "^20.1.0"
