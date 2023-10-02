@@ -1,0 +1,15 @@
+name: app
+type: python:3.9
+disk: 512
+
+hooks:
+  build: |
+    pip install -r requirements.txt
+
+web:
+  commands:
+    start: uvicorn main:app --host 127.0.0.1 --port 8000
+  locations:
+    "/":
+      allow: false
+      passthru: true
