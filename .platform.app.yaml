@@ -8,7 +8,7 @@ hooks:
 
 web:
   commands:
-    start: uvicorn blog.main:app --host 127.0.0.1 --port 8000
+    start: uvicorn blog.main:app --host 127.0.0.1 --port $PORT
   locations:
     "/":
       allow: false
